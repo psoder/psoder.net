@@ -1,0 +1,46 @@
+:root {
+    --darkest: #0B0C10;
+    --dark: #1f2833;
+    --light: #C6C6C7;
+    --teal: #66FCF1;
+    --turquoise: #45A29E;
+}
+
+body {
+    color: var(--dark);
+}
+
+.navbar-item {
+    padding: 0.25em;
+    align-items: center;
+    display: flex;
+}
+
+.navbar-item:hover {
+    background-color: var(--turquoise);    
+    color: white;
+}
+
+#navbar {
+    display: grid;
+    grid-template-columns: repeat(4, auto) 1fr;
+    background-color: var(--darkest);
+    font-size: 2rem;
+    align-items: center;
+}
+
+#logo {
+    display: flex;
+    flex-direction: row;
+    font-weight: 700;
+}
+
+#logo:hover {background-color: var(--darkest);}
+
+#psoder {
+    color: white;
+}
+
+#\.net{
+    color: var(--turquoise);
+}

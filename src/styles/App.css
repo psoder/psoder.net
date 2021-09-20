@@ -1,0 +1,11 @@
+:root {
+    --darkest: #0B0C10;
+    --dark: #1f2833;
+    --light: #C6C6C7;
+    --teal: #66FCF1;
+    --turquoise: #45A29E;
+}
+
+body {
+    color: var(--dark);
+}
