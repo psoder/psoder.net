@@ -1,8 +1,0 @@
-#footer {
-    background-color: var(--darkest);
-    display: grid;
-    grid-template-columns: repeat(4, auto) 1fr;
-    font-size: 1.75rem;
-    align-items: center;
-    padding: 0.5rem;
-}
