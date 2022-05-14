@@ -1,0 +1,26 @@
+.container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 10%;
+    margin: 5% 10% 5% 10%;
+}
+
+.introTextContainer {
+
+}
+
+.introTextContainer > h1 {
+    margin-top: 0;
+    font-weight: 900;
+    line-height: normal;
+    font-size: 3rem;
+} 
+
+.introTextContainer > p {
+    line-height: 1.8;
+    font-size: 1.5rem;
+}
+
+.else {
+    background-color: indigo;
+}

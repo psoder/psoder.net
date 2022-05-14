@@ -1,10 +1,12 @@
-import style from './Footer.module.css'
-// import globalStyle from '/global.css'
+import styles from './Footer.module.css'
 
 export default function Footer() {
     return (
-        <footer>
-            This is a footer
-        </footer>
-    )
+      <footer
+        className={styles.footer}
+        style={{ backgroundColor: "var(--secondary)" }}
+      >
+        This is a footer
+      </footer>
+    );
 }
