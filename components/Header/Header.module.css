@@ -1,0 +1,14 @@
+.header {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 150px repeat(auto-fit, 150px);
+}
+
+.header > * {
+    display: flex;
+    justify-content: center;
+    
+    padding: 1rem;
+    font-size: larger;
+    font-weight: 500;
+}
