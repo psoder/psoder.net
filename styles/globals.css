@@ -26,6 +26,7 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   color: var(--text);
   background-color: var(--primary);
+  scroll-behavior: smooth;
 }
 
 a {
@@ -34,9 +35,24 @@ a {
 }
 
 a:hover {
-  text-decoration: underline;
+  animation-name: linkHover;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
 }
 
 * {
   box-sizing: border-box;
+}
+
+h1 {
+  color: var(--highlight);
+}
+
+@keyframes linkHover {
+  from {
+    color: unset;
+  }
+  to {
+    color: var(--highlight);
+  }
 }

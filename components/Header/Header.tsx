@@ -7,23 +7,12 @@ export default function Header() {
       className={styles.header}
       style={{ backgroundColor: "var(--secondary)" }}
     >
-      <div>
-        <Link href={"/"}>
-          <a className="highlight">
-            <b>psoder.net</b>
-          </a>
-        </Link>
-      </div>
-      <div>
-        <Link href={"/about"}>
-          <a>About</a>
-        </Link>
-      </div>
-      <div>
-        <Link href={"/projects"}>
-          <a>Projects</a>
-        </Link>
-      </div>
+      <b className="highlight">
+        <Link href={"/"}>psoder.net</Link>
+      </b>
+
+      <Link href={"/#about"}>About</Link>
+      <Link href={"/#projects"}>Projects</Link>
     </header>
   );
 }

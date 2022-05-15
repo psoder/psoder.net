@@ -13,26 +13,31 @@ const Home: NextPage = () => {
       </Head>
 
       <Header />
+
       <div className={styles.container}>
-        <div className={styles.introTextContainer}>
-          <h1 style={{ color: "var(--highlight)" }}>
-            Lorem fucking ipsum, something something
-          </h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa. Id
-            diam maecenas ultricies mi eget mauris pharetra.
-          </p>
-        </div>
-        <div className={styles.else}>
-          <Image src={"/images/mountains.jpg"}
-            height={1000}
-            width={1600}
-            alt="Placeholder"
-          />
-        </div>
+        <section id='intro' className={styles.intro}>
+            <h1>Lorem fucking ipsum, something something</h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa. Id
+              diam maecenas ultricies mi eget mauris pharetra.
+            </p>
+        </section>
+
+        <section id='about' className={styles.about}>
+          <h1>About</h1>
+        </section>
+
+        <section id='projects' className={styles.projects}>
+          <h1>Projects</h1>
+        </section>
+
+        <section id='contact' className={styles.contact}>
+          <h1>Contact</h1>
+        </section>
       </div>
+
       <Footer />
     </div>
   );
