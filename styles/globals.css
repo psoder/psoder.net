@@ -9,54 +9,15 @@
     --text: #e0e0e0;
 }
 
-.primary {
-    color: var(--primary);
-}
-.secondary {
-    color: var(--secondary);
-}
-.highlight {
-    color: var(--highlight);
-}
-.text {
-    color: var(--text);
-}
-
 html,
 body {
     padding: 0;
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
         Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    color: var(--text);
-    background-color: var(--primary);
     scroll-behavior: smooth;
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-a:hover {
-    animation-name: linkHover;
-    animation-duration: 0.5s;
-    animation-fill-mode: forwards;
 }
 
 * {
     box-sizing: border-box;
-}
-
-h1 {
-    color: var(--highlight);
-}
-
-@keyframes linkHover {
-    from {
-        color: unset;
-    }
-    to {
-        color: var(--highlight);
-    }
 }

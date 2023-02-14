@@ -1,14 +1,13 @@
-import Image from "next/image";
-import Link from "next/link";
-import styles from "./Footer.module.css";
+import Link from "../Link";
 
 export default function Footer() {
     return (
-        <footer className={styles.footer} style={{ backgroundColor: "var(--secondary)" }}>
-            <h3 style={{ color: "var(--highlight)" }}>Get in touch</h3>
-            <div>
-                <Link href="https://github.com/psoder">Github</Link>
-                <Link href="">Linkedin</Link>
+        <footer className="flex flex-col gap-2 text-center p-6 bg-neutral-900 font-black">
+            <h3 className="text-2xl text-blue-500">Get in touch</h3>
+
+            <div className="flex gap-4 justify-center text-xl">
+                <Link href="https://github.com/psoder">GitHub</Link>
+                <Link href="">LinkedIn</Link>
                 <Link href="">Email</Link>
             </div>
         </footer>
