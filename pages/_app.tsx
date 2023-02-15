@@ -10,7 +10,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                 <Header />
             </div>
 
-            <div className="w-1/2">
+            <div>
                 <Component {...pageProps} />
             </div>
 

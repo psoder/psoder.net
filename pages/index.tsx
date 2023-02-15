@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Footer from "../components/Footer/Footer";
-import Header from "../components/Header/Header";
+import ProjectCard from "../components/Project";
 import Section from "../components/Section";
+import { testProject } from "../types/mocks";
 
 const Home: NextPage = () => {
     return (
@@ -26,14 +26,15 @@ const Home: NextPage = () => {
                 </Section>
 
                 <Section id="projects" title="Projects">
-                    Lorem ipsum
+                    <ProjectCard project={testProject} />
+                    <ProjectCard project={testProject} />
+                    <ProjectCard project={testProject} />
                 </Section>
 
                 <Section id="contact" title="Contact">
                     Lorem ipsum
                 </Section>
             </div>
-
         </div>
     );
 };
