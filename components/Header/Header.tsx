@@ -3,13 +3,17 @@ import Link from "../Link";
 export default function Header() {
     return (
         <header className="flex gap-4 bg-neutral-900 p-4 text-2xl font-black">
-            <Link textColor="text-blue-500" hoverColor="hover:text-white" href={"/"}>
+            <Link className="no-underline" href={"/"} textColor="text-white">
                 psoder.net
             </Link>
 
-            <Link href={"/#about"}>About</Link>
+            <Link href={"/#about"} textColor="text-white">
+                About
+            </Link>
 
-            <Link href={"/#projects"}>Projects</Link>
+            <Link href={"/#projects"} textColor="text-white">
+                Projects
+            </Link>
         </header>
     );
 }

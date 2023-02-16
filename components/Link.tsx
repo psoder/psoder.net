@@ -9,10 +9,10 @@ export default function Link(props: {
 }) {
     return (
         <NextLink
-            className={`${props.textColor ?? "text-blue-500"}
-                ${props.hoverColor ?? "hover:text-white"}
+            className={`${props.textColor ?? "text-black"}
+                hover:${props.hoverColor ?? "text-black"}
                 ${props.className}
-                underline`}
+                hover:underline`}
             href={props.href}
         >
             {props.children}

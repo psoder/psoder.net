@@ -11,7 +11,7 @@ const Home: NextPage = () => {
                 <title>psoder.net</title>
             </Head>
 
-            <div>
+            <div className="grid gap-20">
                 <Section id="intro" title="Introduction">
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -22,7 +22,12 @@ const Home: NextPage = () => {
                 </Section>
 
                 <Section id="about" title="About">
-                    Lorem ipsum
+                    <p>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere saepe error
+                        consequuntur earum? Quis ex repudiandae quaerat? Voluptatum, adipisci
+                        aliquam totam quisquam repellendus eligendi in iusto, repellat est enim
+                        recusandae.
+                    </p>
                 </Section>
 
                 <Section id="projects" title="Projects">
@@ -32,7 +37,12 @@ const Home: NextPage = () => {
                 </Section>
 
                 <Section id="contact" title="Contact">
-                    Lorem ipsum
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti enim
+                        repellendus repellat perspiciatis aut minus! Minus voluptate aspernatur
+                        ratione sapiente, dolore, architecto vero quo, quam aliquid tempora adipisci
+                        laudantium in.
+                    </p>
                 </Section>
             </div>
         </div>
