@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import ProjectCard from "../components/Project";
-import Section from "../components/Section";
-import { testProject } from "../types/mocks";
+import { ProjectCard } from "../components/Project";
+import { Section } from "../components/Section";
+import { projects } from "../types/mocks";
 
 const Home: NextPage = () => {
     return (
@@ -11,7 +11,7 @@ const Home: NextPage = () => {
                 <title>psoder.net</title>
             </Head>
 
-            <div className="grid gap-20">
+            <div className="grid gap-16">
                 <Section id="intro" title="Introduction">
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -31,9 +31,11 @@ const Home: NextPage = () => {
                 </Section>
 
                 <Section id="projects" title="Projects">
-                    <ProjectCard project={testProject} />
-                    <ProjectCard project={testProject} />
-                    <ProjectCard project={testProject} />
+                    <div className="flex flex-col gap-8">
+                        {projects.map((project) => (
+                            <ProjectCard key={project.id} project={project} />
+                        ))}
+                    </div>
                 </Section>
 
                 <Section id="contact" title="Contact">

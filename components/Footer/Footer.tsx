@@ -1,6 +1,6 @@
-import Link from "../Link";
+import { Link } from "../Link";
 
-export default function Footer() {
+export const Footer = () => {
     return (
         <footer className="flex flex-col gap-2 text-center p-6 bg-neutral-900 font-black">
             <h3 className="text-2xl text-white">Get in touch</h3>
@@ -18,4 +18,4 @@ export default function Footer() {
             </div>
         </footer>
     );
-}
+};

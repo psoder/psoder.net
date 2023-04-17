@@ -1,24 +1,20 @@
-import Image from "next/image";
-import quack from "../public/images/quack.jpeg";
-import { Project } from "../types/types";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLink } from "@fortawesome/free-solid-svg-icons";
-import Link from "./Link";
+import { TbExternalLink } from "react-icons/tb";
+import { Project } from "../types/project";
+import { Link } from "./Link";
 
-export default function ProjectCard(props: { project: Project }) {
+export const ProjectCard = ({ project }: { project: Project }) => {
     return (
-        <div className="flex bg-neutral-400">
-            {/* <Image src={quack} alt="" width={300} height={300} /> */}
-            <div className="p-6 grid grid-cols-2 gap-3">
-                <Link className="col-span-2" href={props.project.url}>
-                    <h1 className="font-bold text-3xl">
-                        {props.project.title} <FontAwesomeIcon icon={faLink} />
-                    </h1>
-                </Link>
-                <p className="col-span-2">{props.project.summary}</p>
+        <div className="card grid grid-cols-2 gap-3">
+            <Link className="col-span-2" href={project.uri}>
+                <h1 className="font-bold text-3xl flex items-center gap-1">
+                    {project.title} <TbExternalLink />
+                </h1>
+            </Link>
+            <p className="col-span-2">{project.summary}</p>
+            <Link href={project.uri} target="_blank">
                 <span>View it on GitHub</span>
-                <span>Read more...</span>
-            </div>
+            </Link>
+            <span>Read more...</span>
         </div>
     );
-}
+};

@@ -1,6 +1,6 @@
-import Link from "../Link";
+import { Link } from "../Link";
 
-export default function Header() {
+export const Header = () => {
     return (
         <header className="flex gap-4 bg-neutral-900 p-4 text-2xl font-black">
             <Link className="no-underline" href={"/"} textColor="text-white">
@@ -16,4 +16,4 @@ export default function Header() {
             </Link>
         </header>
     );
-}
+};

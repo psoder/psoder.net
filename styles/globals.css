@@ -21,3 +21,15 @@ body {
 * {
     box-sizing: border-box;
 }
+
+@layer base {
+    a {
+        @apply hover:text-red-600;
+    }
+}
+
+@layer components {
+    .card {
+        @apply shadow-lg p-4 shadow-neutral-500 rounded-lg bg-neutral-300;
+    }
+}

@@ -1,12 +1,14 @@
 import { default as NextLink } from "next/link";
+import { HTMLAttributeAnchorTarget, ReactNode } from "react";
 
-export default function Link(props: {
+export const Link = (props: {
     href: string;
+    children: ReactNode;
     className?: string;
     textColor?: string;
     hoverColor?: string;
-    children: React.ReactNode;
-}) {
+    target?: HTMLAttributeAnchorTarget;
+}) => {
     return (
         <NextLink
             className={`${props.textColor ?? "text-black"}
@@ -14,8 +16,9 @@ export default function Link(props: {
                 ${props.className}
                 hover:underline`}
             href={props.href}
+            target={props.target}
         >
             {props.children}
         </NextLink>
     );
-}
+};
