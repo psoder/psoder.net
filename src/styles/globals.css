@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --primary: #252525;
+    --secondary: #000000;
+    --highlight: #dd2569;
+    --text: #e0e0e0;
+}
+
+@layer base {
+    html,
+    body {
+        padding: 0;
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
+            Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+        scroll-behavior: smooth;
+        @apply bg-neutral-200;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    a {
+        @apply hover:text-red-600;
+    }
+
+    hr {
+        @apply h-0.5 bg-neutral-400;
+    }
+}
+
+@layer components {
+    .card {
+        @apply shadow-lg p-4 shadow-neutral-300 rounded-lg bg-neutral-100;
+    }
+}

@@ -1,10 +1,10 @@
-import { Project } from "./project";
+import { Project } from "@/types/project";
 
 export const projects: Project[] = [
     {
         title: "psoder.net",
         id: "1",
-        uri: "https://github.com/psoder/psoder.net",
+        repo: "https://github.com/psoder/psoder.net",
         summary:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
         description:
@@ -12,8 +12,8 @@ export const projects: Project[] = [
     },
     {
         title: "Stupid Spotify",
-        id: "1",
-        uri: "https://github.com/psoder/stupid-spotify",
+        id: "2",
+        repo: "https://github.com/psoder/stupid-spotify",
         summary:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
         description:
@@ -21,8 +21,8 @@ export const projects: Project[] = [
     },
     {
         title: "Bastukung",
-        id: "1",
-        uri: "https://github.com/psoder/bastukung",
+        id: "3",
+        repo: "https://github.com/psoder/bastukung",
         summary:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
         description:

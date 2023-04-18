@@ -1,8 +1,9 @@
 export type Project = {
     title: string;
     id: string;
-    uri: string;
+    repo: string;
     summary: string;
     description: string;
     imageUri?: string;
+    blogUri?: string;
 };
