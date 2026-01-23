@@ -1,6 +1,6 @@
 import Image from "next/image";
 import quack from "../public/images/quack.jpeg";
-import { Project } from "../types/types";
+import type { Project } from "../types/types";
 import Link from "./Link";
 
 export default function ProjectCard(props: { project: Project }) {

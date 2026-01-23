@@ -4,8 +4,7 @@ import ProjectCard from "../components/Project";
 import Section from "../components/Section";
 import { testProject } from "../types/mocks";
 
-const Home: NextPage = () => {
-    return (
+const Home: NextPage = () => (
         <div>
             <Head>
                 <title>psoder.net</title>
@@ -37,6 +36,5 @@ const Home: NextPage = () => {
             </div>
         </div>
     );
-};
 
 export default Home;
