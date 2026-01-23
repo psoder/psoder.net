@@ -1,9 +1,11 @@
-import "../styles/globals.css";
+// oxlint-disable typescript/explicit-module-boundary-types
 import type { AppProps } from "next/app";
-import Header from "../components/Header/Header";
-import Footer from "../components/Footer/Footer";
+import { Footer } from "../components/Footer/Footer";
+import { Header } from "../components/Header/Header";
+import "../styles/globals.css";
 
-function MyApp({ Component, pageProps }: AppProps) {
+// oxlint-disable-next-line typescript/explicit-function-return-type func-style
+function App({ Component, pageProps }: AppProps) {
   return (
     <div className="flex flex-col bg-neutral-700  min-h-screen text-gray-50 items-center">
       <div className="w-full">
@@ -11,6 +13,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       </div>
 
       <div>
+        {/* oxlint-disable-next-line react/jsx-props-no-spreading */}
         <Component {...pageProps} />
       </div>
 
@@ -21,4 +24,4 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
-export default MyApp;
+export default App;

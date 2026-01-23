@@ -1,21 +1,22 @@
 import { default as NextLink } from "next/link";
+import type { ReactNode } from "react";
 
-export default function Link(props: {
+interface LinkProps {
   href: string;
   className?: string;
   textColor?: string;
   hoverColor?: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <NextLink
-      className={`${props.textColor ?? "text-blue-500"}
+  children: ReactNode;
+}
+
+export const Link = (props: LinkProps): ReactNode => (
+  <NextLink
+    className={`${props.textColor ?? "text-blue-500"}
                 ${props.hoverColor ?? "hover:text-white"}
                 ${props.className}
                 underline`}
-      href={props.href}
-    >
-      {props.children}
-    </NextLink>
-  );
-}
+    href={props.href}
+  >
+    {props.children}
+  </NextLink>
+);

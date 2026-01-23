@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["unicorn", "typescript", "oxc", "nextjs", "react", "react-perf", "promise", "import"],
+  "plugins": ["unicorn", "typescript", "oxc", "nextjs", "react", "react-perf", "promise"],
   "categories": {
     "correctness": "error",
     "pedantic": "error",
@@ -113,7 +113,25 @@
     "unicorn/no-useless-length-check": "warn",
     "unicorn/no-useless-spread": "warn",
     "unicorn/prefer-set-size": "warn",
-    "unicorn/prefer-string-starts-ends-with": "warn"
+    "unicorn/prefer-string-starts-ends-with": "warn",
+    "eslint-plugin-react/react-in-jsx-scope": "off",
+    "eslint-plugin-react/jsx-filename-extension": "off",
+    "unicorn/filename-case": [
+      "error",
+      {
+        "cases": {
+          "kebabCase": true,
+          "pascalCase": true
+        }
+      }
+    ],
+    "eslint/sort-imports": "off",
+    "react/jsx-max-depth": [
+      "warn",
+      {
+        "max": 5
+      }
+    ]
   },
   "settings": {
     "jsx-a11y": {

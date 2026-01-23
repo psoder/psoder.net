@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import ProjectCard from "../components/Project";
-import Section from "../components/Section";
+import { ProjectCard } from "../components/Project";
+import { Section } from "../components/Section";
 import { testProject } from "../types/mocks";
 
 const Home: NextPage = () => (
