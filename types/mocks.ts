@@ -6,5 +6,5 @@ export const testProject: Project = {
     id: "1",
     image: "fippel.png",
     title: "psoder.net",
-    url: "https://github.com/psoder/psoder.net"
+    url: "https://github.com/psoder/psoder.net",
 };
