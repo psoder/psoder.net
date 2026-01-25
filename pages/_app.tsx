@@ -1,26 +1,33 @@
 // oxlint-disable typescript/explicit-module-boundary-types
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import type { AppProps } from "next/app";
 import { Footer } from "../components/Footer/Footer";
 import { Header } from "../components/Header/Header";
 import "../styles/globals.css";
 
+const queryClient = new QueryClient();
+
 // oxlint-disable-next-line typescript/explicit-function-return-type func-style
 function App({ Component, pageProps }: AppProps) {
   return (
-    <div className="flex flex-col bg-neutral-700  min-h-screen text-gray-50 items-center">
-      <div className="w-full">
-        <Header />
-      </div>
+    <QueryClientProvider client={queryClient}>
+      <div className="min-h-dvh flex flex-col bg-neutral-700 text-gray-50">
+        <header className="w-full">
+          <Header />
+        </header>
 
-      <div>
-        {/* oxlint-disable-next-line react/jsx-props-no-spreading */}
-        <Component {...pageProps} />
-      </div>
+        <main className="flex-1 w-full">
+          <div className="mx-auto max-w-7xl px-4">
+            {/* oxlint-disable-next-line react/jsx-props-no-spreading */}
+            <Component {...pageProps} />
+          </div>
+        </main>
 
-      <div className="mt-auto w-full">
-        <Footer />
+        <footer className="w-full">
+          <Footer />
+        </footer>
       </div>
-    </div>
+    </QueryClientProvider>
   );
 }
 

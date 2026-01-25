@@ -9,6 +9,40 @@
     "suspicious": "error",
     "style": "warn"
   },
+  "jsPlugins": ["@tanstack/eslint-plugin-query"],
+  "settings": {
+    "jsx-a11y": {
+      "polymorphicPropName": null,
+      "components": {},
+      "attributes": {}
+    },
+    "next": {
+      "rootDir": []
+    },
+    "react": {
+      "formComponents": [],
+      "linkComponents": [],
+      "version": null
+    },
+    "jsdoc": {
+      "ignorePrivate": false,
+      "ignoreInternal": false,
+      "ignoreReplacesDocs": true,
+      "overrideReplacesDocs": true,
+      "augmentsExtendsReplacesDocs": false,
+      "implementsReplacesDocs": false,
+      "exemptDestructuredRootsFromChecks": false,
+      "tagNamePreference": {}
+    },
+    "vitest": {
+      "typecheck": false
+    }
+  },
+  "env": {
+    "builtin": true
+  },
+  "globals": {},
+  "ignorePatterns": [],
   "rules": {
     "constructor-super": "warn",
     "for-direction": "warn",
@@ -116,54 +150,27 @@
     "unicorn/prefer-string-starts-ends-with": "warn",
     "eslint-plugin-react/react-in-jsx-scope": "off",
     "eslint-plugin-react/jsx-filename-extension": "off",
-    "unicorn/filename-case": [
-      "error",
-      {
-        "cases": {
-          "kebabCase": true,
-          "pascalCase": true
-        }
-      }
-    ],
+    "unicorn/filename-case": "off",
     "eslint/sort-imports": "off",
     "react/jsx-max-depth": [
       "warn",
       {
         "max": 5
       }
-    ]
-  },
-  "settings": {
-    "jsx-a11y": {
-      "polymorphicPropName": null,
-      "components": {},
-      "attributes": {}
-    },
-    "next": {
-      "rootDir": []
-    },
-    "react": {
-      "formComponents": [],
-      "linkComponents": [],
-      "version": null
-    },
-    "jsdoc": {
-      "ignorePrivate": false,
-      "ignoreInternal": false,
-      "ignoreReplacesDocs": true,
-      "overrideReplacesDocs": true,
-      "augmentsExtendsReplacesDocs": false,
-      "implementsReplacesDocs": false,
-      "exemptDestructuredRootsFromChecks": false,
-      "tagNamePreference": {}
-    },
-    "vitest": {
-      "typecheck": false
-    }
-  },
-  "env": {
-    "builtin": true
-  },
-  "globals": {},
-  "ignorePatterns": []
+    ],
+    "promise/prefer-await-to-then": "off",
+    "eslint/no-else-return": "off",
+    "promise/prefer-await-to-callbacks": "off",
+    "eslint/no-console": [
+      "error",
+      {
+        "allow": ["error"]
+      }
+    ],
+    "oxc/no-async-await": "off",
+    "eslint/id-length": "off",
+    "eslint/sort-keys": "off",
+    "eslint/no-ternary": "off",
+    "eslint/no-undefined": "off"
+  }
 }

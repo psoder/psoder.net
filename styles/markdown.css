@@ -1,0 +1,198 @@
+/* ===============================
+   Markdown + Prose Base
+   =============================== */
+
+.markdown.prose {
+  color: var(--ctp-text);
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont;
+  line-height: 1.75;
+  font-size: 1rem;
+}
+
+/* Reset prose max-width handling */
+.markdown.prose {
+  max-width: none;
+}
+
+/* ===============================
+   Headings
+   =============================== */
+
+.markdown.prose h1,
+.markdown.prose h2,
+.markdown.prose h3,
+.markdown.prose h4,
+.markdown.prose h5,
+.markdown.prose h6 {
+  color: var(--ctp-lavender);
+  font-weight: 700;
+  line-height: 1.25;
+  scroll-margin-top: 6rem;
+}
+
+.markdown.prose h1 {
+  font-size: 2.25rem;
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+}
+
+.markdown.prose h2 {
+  font-size: 1.75rem;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+.markdown.prose h3 {
+  font-size: 1.4rem;
+  margin-top: 2.25rem;
+  margin-bottom: 0.75rem;
+}
+
+/* ===============================
+   Text
+   =============================== */
+
+.markdown.prose p {
+  margin: 1.25rem 0;
+  color: var(--ctp-text);
+}
+
+.markdown.prose strong {
+  color: var(--ctp-rosewater);
+  font-weight: 600;
+}
+
+.markdown.prose em {
+  color: var(--ctp-pink);
+}
+
+/* ===============================
+   Links
+   =============================== */
+
+.markdown.prose a {
+  color: var(--ctp-blue);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.markdown.prose a:hover {
+  color: var(--ctp-sky);
+}
+
+/* ===============================
+   Lists
+   =============================== */
+
+.markdown.prose ul,
+.markdown.prose ol {
+  margin: 1.25rem 0;
+  padding-left: 1.5rem;
+}
+
+.markdown.prose li {
+  margin: 0.4rem 0;
+}
+
+.markdown.prose li::marker {
+  color: var(--ctp-mauve);
+}
+
+/* ===============================
+   Blockquotes
+   =============================== */
+
+.markdown.prose blockquote {
+  margin: 2rem 0;
+  padding: 1rem 1.25rem;
+  border-left: 4px solid var(--ctp-mauve);
+  background: var(--ctp-surface0);
+  color: var(--ctp-subtext1);
+  border-radius: 0.5rem;
+}
+
+.markdown.prose blockquote p {
+  margin: 0.5rem 0;
+}
+
+/* ===============================
+   Inline Code
+   =============================== */
+
+.markdown.prose code {
+  background: var(--ctp-surface1);
+  color: var(--ctp-peach);
+  padding: 0.2rem 0.4rem;
+  border-radius: 6px;
+  font-size: 0.9em;
+}
+
+/* ===============================
+   Code Blocks
+   =============================== */
+
+.markdown.prose pre {
+  margin: 2rem 0;
+  padding: 1.25rem 1.5rem;
+  background: var(--ctp-crust);
+  border-radius: 12px;
+  overflow-x: auto;
+}
+
+.markdown.prose pre code {
+  background: none;
+  padding: 0;
+  color: var(--ctp-text);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ===============================
+   Tables
+   =============================== */
+
+.markdown.prose table {
+  width: 100%;
+  margin: 2rem 0;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.markdown.prose th {
+  background: var(--ctp-surface1);
+  color: var(--ctp-lavender);
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.markdown.prose td {
+  background: var(--ctp-surface0);
+  padding: 0.75rem;
+  border-top: 1px solid var(--ctp-surface2);
+}
+
+/* ===============================
+   Horizontal Rule
+   =============================== */
+
+.markdown.prose hr {
+  border: none;
+  height: 1px;
+  background: var(--ctp-surface2);
+  margin: 3rem 0;
+}
+
+/* ===============================
+   Images
+   =============================== */
+
+.markdown.prose img {
+  max-width: 100%;
+  margin: 2rem auto;
+  border-radius: 12px;
+}
