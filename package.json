@@ -21,6 +21,7 @@
   "devDependencies": {
     "@tailwindcss/postcss": "4.1.18",
     "@tanstack/eslint-plugin-query": "5.91.3",
+    "@types/node": "25.0.10",
     "@types/react": "19.2.9",
     "@types/react-dom": "19.2.3",
     "autoprefixer": "10.4.13",
