@@ -1,0 +1,22 @@
+---
+import { Image } from "astro:assets";
+import quack from "../assets/quack.jpeg";
+import type { Project } from "../types/types.ts";
+
+interface Props {
+    project: Project;
+}
+
+const { project } = Astro.props;
+---
+
+<div class="flex">
+    <div class="bg-ctp-mantle p-6 grid gap-3">
+        <h1 class="text-ctp-text font-bold text-3xl">{project.title}</h1>
+        <h2>
+            <a href={project.url}>{project.url}</a>
+        </h2>
+        <p>{project.description}</p>
+    </div>
+    <Image src={quack} alt="quack" width={300} height={300} />
+</div>

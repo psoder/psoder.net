@@ -31,7 +31,7 @@
 }
 
 html,
-\body {
+body {
   padding: 0;
   margin: 0;
   font-family:
@@ -51,4 +51,10 @@ html,
 
 * {
   box-sizing: border-box;
+}
+
+@layer base {
+  a {
+    @apply text-ctp-blue hover:text-ctp-rosewater underline;
+  }
 }
