@@ -12,7 +12,7 @@ const Page: NextPage = () => {
 
   return (
     <article className="mx-auto max-w-3xl px-4 py-12">
-      <div className="rounded-xl bg-neutral-800 p-6 shadow-lg">
+      <div className="rounded-xl bg-ctp-mantle p-6 shadow-lg">
         <Post postId={postId} />
       </div>
     </article>

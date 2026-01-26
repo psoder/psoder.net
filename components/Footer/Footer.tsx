@@ -2,9 +2,7 @@ import type { ReactNode } from "react";
 import { Link } from "../Link";
 
 export const Footer = (): ReactNode => (
-  <footer className="flex flex-col gap-2 text-center p-6 bg-neutral-900 font-black">
-    <h3 className="text-2xl text-blue-500">Get in touch</h3>
-
+  <footer className="flex flex-col gap-2 text-center p-6 bg-ctp-crust font-black">
     <div className="flex gap-4 justify-center text-xl">
       <Link href="https://github.com/psoder">GitHub</Link>
       <Link href="">LinkedIn</Link>

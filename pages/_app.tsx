@@ -11,7 +11,7 @@ const queryClient = new QueryClient();
 function App({ Component, pageProps }: AppProps) {
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="min-h-dvh flex flex-col bg-neutral-700 text-gray-50">
+      <div className="min-h-dvh flex flex-col bg-ctp-base text-gray-50">
         <header className="w-full">
           <Header />
         </header>

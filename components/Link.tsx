@@ -11,8 +11,8 @@ interface LinkProps {
 
 export const Link = (props: LinkProps): ReactNode => (
   <NextLink
-    className={`${props.textColor ?? "text-blue-500"}
-                ${props.hoverColor ?? "hover:text-white"}
+    className={`${props.textColor ?? "text-ctp-sky"}
+                ${props.hoverColor ?? "hover:text-ctp-text"}
                 ${props.className}
                 underline`}
     href={props.href}
