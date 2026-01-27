@@ -8,7 +8,7 @@
         "astro": "5.16.15",
       },
       "devDependencies": {
-        "@astrojs/check": "^0.9.6",
+        "@astrojs/check": "0.9.6",
         "@tailwindcss/vite": "4.1.18",
         "@tanstack/eslint-plugin-query": "5.91.3",
         "oxfmt": "0.26.0",
