@@ -1,6 +1,10 @@
 @import "tailwindcss";
 @import "./markdown.css";
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @theme {
   --color-ctp-rosewater: #f4dbd6;
   --color-ctp-flamingo: #f0c6c6;
@@ -30,31 +34,118 @@
   --color-ctp-crust: #181926;
 }
 
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    Segoe UI,
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    Fira Sans,
-    Droid Sans,
-    Helvetica Neue,
-    sans-serif;
-  scroll-behavior: smooth;
-}
-
-* {
-  box-sizing: border-box;
-}
-
 @layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    hanging-punctuation: first last;
+  }
+
+  body {
+    margin: 0;
+    font-family: var(--font-inter), system-ui, sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--color-ctp-text);
+    background-color: var(--color-ctp-base);
+    text-rendering: optimizeLegibility;
+  }
+
+  main {
+    padding: clamp(1.5rem, 5vw, 3rem);
+  }
+
+  article {
+    font-family: var(--font-ibm-plex-serif), Georgia, serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-inter), system-ui, sans-serif;
+    color: var(--color-ctp-text);
+    line-height: 1.25;
+    letter-spacing: -0.015em;
+    margin-top: 2.5rem;
+    margin-bottom: 0.75rem;
+    text-wrap: balance;
+  }
+
+  h1 {
+    font-size: clamp(2.25rem, 4vw, 3rem); 
+    margin-top: 0;
+  } 
+
+  h2 {
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    max-width: 65ch;
+    margin-block: 1.25em;
+    hyphens: auto;
+  }
+
+  p + p {
+    margin-top: 0.75em;
+  }
+
   a {
-    @apply text-ctp-blue hover:text-ctp-rosewater underline;
+    color: var(--color-ctp-blue);
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 0.18em;
+    transition: color 150ms ease;
+  }
+
+  a:hover {
+    color: var(--color-ctp-rosewater);
+  }
+
+  code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    color: var(--color-ctp-peach);
+  }
+
+  blockquote {
+    border-left: 3px solid var(--color-ctp-surface2);
+    padding-left: 1rem;
+    color: var(--color-ctp-subtext0);
+    font-style: italic;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  hr {
+    border: none;
+    height: 1px;
+    background-color: var(--color-ctp-surface1);
+    margin: 3rem 0;
+  }
+
+  ::selection {
+    background-color: var(--color-ctp-mauve);
+    color: var(--color-ctp-crust);
+  }
+
+  ::focus-visible {
+    outline: 2px solid var(--color-ctp-blue);
+    outline-offset: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
   }
 }

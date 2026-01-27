@@ -7,7 +7,7 @@ interface Props {
 const { id, title } = Astro.props;
 ---
 
-<section id={id} class="flex flex-col gap-6 text-xl max-w-[80ch]">
+<section id={id} class="flex flex-col text-xl max-w-[80ch]">
     <h1 class="text-5xl mt-10 font-black text-ctp-text">{title}</h1>
     <slot />
 </section>
