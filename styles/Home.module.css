@@ -1,22 +1,42 @@
 .container {
-  margin: 5% 10% 5% 10%;
+  margin: 0 20% 0 20%;
 }
 
 .container > section {
-  margin-top: 10%;
+  height: 100vh;
+  padding-top: 10%;
+}
+
+.sidenav {
+  display: grid;
+  position: fixed;
+  left: 0;
+  bottom: 40vh;
+  padding: 2%;
+
+  font-size: xx-large;
+  line-height: 1.5;
+}
+
+section.intro {
+  padding-top: 20%;
 }
 
 .container h1 {
-    font-size: 4rem;
+  font-size: 4rem;
   margin-top: 0;
   font-weight: 900;
   line-height: normal;
 }
 
+.container p {
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
 .intro {
-  display: grid;
-  margin-left: 20%;
-  margin-right: 20%;
+  padding-left: 20%;
+  padding-right: 20%;
   justify-content: center;
   text-align: center;
 }
@@ -26,6 +46,15 @@
   font-size: 1.5rem;
 }
 
-.about {}
+.downArrow {
+  filter: invert(100%);
+}
 
-.projects {}
+.about {
+}
+
+.projects > div {
+  display: grid;
+  gap: 3%;
+  grid-template-columns: 1fr 1fr 1fr;
+}

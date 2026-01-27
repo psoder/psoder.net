@@ -3,6 +3,7 @@
   --secondary: #000000;
   --highlight: #dd2569;
   --text: #e0e0e0;
+  --box-shadow: box-shadow: 10px 10px 5px var(--highlight);
 }
 
 .primary {

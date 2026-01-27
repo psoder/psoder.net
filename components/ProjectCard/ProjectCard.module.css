@@ -1,0 +1,50 @@
+.projectCard {
+  background-color: var(--secondary);
+  box-shadow: 5px 5px 5px var(--secondary);
+  padding: 10%;
+  display: grid;
+  grid-template-rows: 1fr 3fr;
+}
+
+.projectCard h2 {
+  margin: 0;
+  align-self: center;
+  text-align: center;
+  font-size: xx-large;
+  color: var(--highlight);
+}
+
+.projectCard Img {
+  border-radius: 50%;
+  /* background-color: var(--text); */
+}
+
+.projectCard Img:hover {
+  animation-name: imgHover;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.projectCard a {
+  display: flex;
+  padding: 3%;
+  background-color: var(--primary);
+  justify-content: center;
+  align-items: center;
+}
+
+.projectCard > :last-child {
+  display: grid;
+  height: 1rem;
+  gap: 2rem;
+  grid-template-columns: 4fr 2rem;
+}
+
+@keyframes imgHover {
+  from {
+    background-color: unset;
+  }
+  to {
+    background-color: var(--highlight);
+  }
+}
