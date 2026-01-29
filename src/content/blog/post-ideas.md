@@ -1,5 +1,7 @@
 ---
 title: Post Ideas
+description: Blog post ideas
+publicationDate: 2026/01/01
 ---
 
 # Ideas

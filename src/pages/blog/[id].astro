@@ -1,0 +1,25 @@
+---
+import { getCollection, render, type CollectionEntry } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+
+// oxlint-disable-next-line func-style typescript/explicit-module-boundary-types explicit-function-return-type
+export async function getStaticPaths() {
+    const posts: CollectionEntry<"blog">[] = await getCollection("blog");
+
+    return posts.map((post) => ({
+        params: { id: post.id },
+        props: { post },
+    }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<Layout>
+    <h1>{post.data.title}</h1>
+
+    <article class="prose bg-ctp-mantle p-6 rounded-2xl">
+        <Content />
+    </article>
+</Layout>
