@@ -56,15 +56,16 @@
     text-rendering: optimizeLegibility;
   }
 
-  main {
-    padding: clamp(1.5rem, 5vw, 3rem);
-  }
-
   article {
     font-family: var(--font-ibm-plex-serif), Georgia, serif;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-inter), system-ui, sans-serif;
     color: var(--color-ctp-text);
     line-height: 1.25;
@@ -75,9 +76,9 @@
   }
 
   h1 {
-    font-size: clamp(2.25rem, 4vw, 3rem); 
+    font-size: clamp(2.25rem, 4vw, 3rem);
     margin-top: 0;
-  } 
+  }
 
   h2 {
     font-size: clamp(1.75rem, 3vw, 2.25rem);

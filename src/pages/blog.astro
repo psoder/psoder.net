@@ -1,21 +1,48 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content";
+import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 
-const posts: CollectionEntry<"blog">[] = await getCollection("blog");
+// oxlint-disable-next-line unicorn/no-await-expression-member
+const posts = (await getCollection("blog")).toSorted(
+    (a, b) =>
+        new Date(b.data.publicationDate).getTime() - new Date(a.data.publicationDate).getTime()
+);
+
+const formatDate = (date: string): string =>
+    new Date(date).toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+    });
 ---
 
 <Layout title="Blog">
-    <h1>Posts</h1>
-    <ul>
-        {
-            posts.map((post) => (
-                <li>
-                    <a href={`/blog/${post.id}`}>
-                        {post.data.title} ({post.data.publicationDate})
-                    </a>
-                </li>
-            ))
-        }
-    </ul>
+    <main class="mx-auto max-w-3xl">
+        <header>
+            <h1 class="font-bold tracking-tight">Blog posts</h1>
+            <p class="mt-2 text-sm opacity-70">Writing about things I’m learning and building.</p>
+        </header>
+
+        <ul class="">
+            {
+                posts.map((post) => (
+                    <li>
+                        <a
+                            href={`/blog/${post.id}`}
+                            class="hover:bg-ctp-mantle p-2 px-4 rounded-lg font-medium flex justify-between gap-4 items-center"
+                        >
+                            {post.data.title}
+
+                            <time
+                                class="text-sm opacity-60 shrink-0"
+                                datetime={post.data.publicationDate}
+                            >
+                                {formatDate(post.data.publicationDate)}
+                            </time>
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+    </main>
 </Layout>

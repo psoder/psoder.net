@@ -1,10 +1,7 @@
 ---
 title: Post Ideas
-description: Blog post ideas
-publicationDate: 2026/01/01
+publicationDate: 2026/01/25
 ---
-
-# Ideas
 
 ## Meta
 

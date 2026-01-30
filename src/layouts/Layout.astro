@@ -12,19 +12,28 @@ const { title } = Astro.props;
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
         <meta name="generator" content={Astro.generator} />
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
         <title>{title}</title>
+        <Head />
     </head>
-    <Head />
     <body>
+        <a
+            href="#content"
+            class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4"
+        >
+            Skip to content
+        </a>
+
         <div class="min-h-dvh flex flex-col">
             <Header />
 
-            <main class="flex-1 w-full">
-                <div class="mx-auto max-w-7xl px-4">
+            <main id="content" class="flex-1 w-full">
+                <div class="mx-auto max-w-7xl px-4 py-8">
                     <slot />
                 </div>
             </main>
