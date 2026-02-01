@@ -130,8 +130,7 @@
   hr {
     border: none;
     height: 1px;
-    background-color: var(--color-ctp-surface1);
-    margin: 3rem 0;
+    @apply bg-ctp-surface1/80 my-8;
   }
 
   ::selection {

@@ -1,6 +1,7 @@
 ---
 import PostList from "../components/PostList.astro";
 import Layout from "../layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
 ---
 
 <Layout title="Blog">
@@ -10,8 +11,18 @@ import Layout from "../layouts/Layout.astro";
             <p class="mt-2 text-sm opacity-70">
                 Writing about things I'm working on and find interesting
             </p>
-        </header>
 
-        <PostList />
+            <a
+                href="/rss.xml"
+                class="inline-flex items-center gap-1 text-sm opacity-70 hover:opacity-100 transition"
+            >
+                RSS
+                <Icon name="mdi:rss-feed" class="h-4 w-4" />
+            </a>
+
+            <hr />
+
+            <PostList />
+        </header>
     </div>
 </Layout>
