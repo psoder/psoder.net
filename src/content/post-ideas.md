@@ -1,7 +1,4 @@
----
-title: Post Ideas
-publicationDate: 2026/01/25
----
+# Post Ideas
 
 ## Meta
 
