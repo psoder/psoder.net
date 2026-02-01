@@ -1,6 +1,7 @@
 ---
-id: hmoz1esyn75xnx6r3cus0u6v
 title: Just Doing It
+slug: just-doing-it
+id: hmoz1esyn75xnx6r3cus0u6v
 publicationDate: 2026/02/01
 ---
 

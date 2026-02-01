@@ -20,7 +20,7 @@ const formatDate = (date: string): string =>
         posts.map((post) => (
             <li>
                 <a
-                    href={`/blog/${post.id}`}
+                    href={`/blog/${post.data.slug}`}
                     class="hover:bg-ctp-mantle p-2 px-4 rounded-lg font-medium flex justify-between gap-4 items-center"
                 >
                     {post.data.title}

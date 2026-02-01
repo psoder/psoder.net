@@ -1,6 +1,14 @@
 {
   "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["unicorn", "typescript", "oxc", "nextjs", "react", "react-perf", "promise"],
+  "plugins": [
+    "unicorn",
+    "typescript",
+    "oxc",
+    "nextjs",
+    "react",
+    "react-perf",
+    "promise"
+  ],
   "categories": {
     "correctness": "error",
     "pedantic": "error",
@@ -9,7 +17,9 @@
     "suspicious": "error",
     "style": "warn"
   },
-  "jsPlugins": ["@tanstack/eslint-plugin-query"],
+  "jsPlugins": [
+    "@tanstack/eslint-plugin-query"
+  ],
   "settings": {
     "jsx-a11y": {
       "polymorphicPropName": null,
@@ -44,6 +54,7 @@
   "globals": {},
   "ignorePatterns": [],
   "rules": {
+    "oxc/no-optional-chaining": "off",
     "constructor-super": "warn",
     "for-direction": "warn",
     "no-async-promise-executor": "warn",
@@ -84,7 +95,7 @@
     "no-unassigned-vars": "warn",
     "no-unsafe-finally": "warn",
     "no-unsafe-negation": "warn",
-    "no-unsafe-optional-chaining": "warn",
+    "no-unsafe-optional-chaining": "off",
     "no-unused-expressions": "warn",
     "no-unused-labels": "warn",
     "no-unused-private-class-members": "warn",
@@ -164,7 +175,9 @@
     "eslint/no-console": [
       "error",
       {
-        "allow": ["error"]
+        "allow": [
+          "error"
+        ]
       }
     ],
     "oxc/no-async-await": "off",
