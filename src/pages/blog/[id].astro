@@ -20,14 +20,20 @@ const dateString = new Date(post.data.publicationDate).toLocaleDateString("en-US
     month: "long",
     day: "numeric",
 });
+
+const WPM = 250;
+// oxlint-disable-next-line oxc/no-optional-chaining no-magic-numbers
+const readTime = Math.ceil((post.body ?? "").split(" ").length / WPM);
 ---
 
 <Layout title={post.data.title}>
     <div class="mx-auto max-w-3xl px-4 sm:px-6 md:px-0">
         <header>
             <h1>{post.data.title}</h1>
-            <p class="text-sm opacity-70">
-                <time datetime={post.data.publicationDate}> {dateString} </time>
+            <p class="text-sm text-secondary opacity-80 flex gap-2 items-center">
+                <time datetime={post.data.publicationDate}>{dateString}</time>
+                <span>&#8226;</span>
+                <span>{readTime} minute read</span>
             </p>
         </header>
 
@@ -35,7 +41,7 @@ const dateString = new Date(post.data.publicationDate).toLocaleDateString("en-US
             <Content />
         </article>
 
-        <hr class="my-16 border-ctp-subtext1/10" />
+        <hr class="my-16 border-ctp-subtext1/20" />
 
         <footer class="text-sm opacity-70">
             <a href="/blog">← Back to all posts</a>
