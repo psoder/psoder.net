@@ -124,12 +124,13 @@
    Inline Code
    =============================== */
 
-.markdown.prose code {
+.markdown.prose :not(pre) > code {
   background: var(--ctp-surface1);
   color: var(--ctp-peach);
   padding: 0.2rem 0.4rem;
   border-radius: 6px;
   font-size: 0.9em;
+  white-space: nowrap;
 }
 
 /* ===============================
@@ -140,16 +141,27 @@
   margin: 2rem 0;
   padding: 1.25rem 1.5rem;
   background: var(--ctp-crust);
-  border-radius: 12px;
+  border-radius: 14px;
   overflow-x: auto;
+  box-shadow: inset 0 0 0 1px var(--ctp-surface1);
 }
 
 .markdown.prose pre code {
-  background: none;
-  padding: 0;
+  font-family:
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Monaco,
+    Consolas,
+    monospace;
   color: var(--ctp-text);
   font-size: 0.95rem;
-  line-height: 1.6;
+  line-height: 1.65;
+}
+
+.markdown.prose blockquote {
+  font-style: italic;
+  backdrop-filter: blur(6px);
 }
 
 /* ===============================

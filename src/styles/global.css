@@ -1,8 +1,6 @@
 @import "tailwindcss";
 @import "./markdown.css";
 
-@tailwind base;
-@tailwind components;
 @tailwind utilities;
 
 @theme {
@@ -60,6 +58,10 @@
     font-family: var(--font-ibm-plex-serif), Georgia, serif;
   }
 
+  article :where(p, ul, ol, blockquote, pre) {
+    max-width: 65ch;
+  }
+
   h1,
   h2,
   h3,
@@ -109,9 +111,53 @@
     color: var(--color-ctp-rosewater);
   }
 
-  code {
-    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  pre {
+    padding: 1.25rem 1.5rem;
+    background: linear-gradient(
+      180deg,
+      var(--color-ctp-crust),
+      var(--color-ctp-mantle)
+    );
+    border-radius: 14px;
+    overflow-x: auto;
+    box-shadow:
+      inset 0 0 0 1px color-mix(in srgb, var(--color-ctp-surface0) 70%, transparent),
+      0 10px 30px -15px rgba(0, 0, 0, 0.6);
+
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-ctp-surface2) transparent;
+  }
+
+  pre::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  pre::-webkit-scrollbar-thumb {
+    background: var(--color-ctp-surface2);
+    border-radius: 8px;
+  }
+
+  pre > code {
+    color: var(--color-ctp-text);
+    background: none;
+    font-size: 0.9rem;
+    line-height: 1.65;
+    letter-spacing: 0.01em;
+    display: block;
+    min-width: max-content;
+  }
+
+  :not(pre) > code {
+    background: color-mix(
+      in srgb,
+      var(--color-ctp-surface0) 85%,
+      transparent
+    );
+    padding: 0.2em 0.45em;
+    border-radius: 6px;
     color: var(--color-ctp-peach);
+    font-size: 0.85em;
+    white-space: nowrap;
   }
 
   blockquote {
