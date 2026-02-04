@@ -7,10 +7,12 @@ import { Icon } from "astro-icon/components";
 export async function getStaticPaths() {
     const posts: CollectionEntry<"blog">[] = await getCollection("blog");
 
-    return posts.map((post) => ({
-        params: { id: post.data?.slug ?? post.id },
-        props: { post },
-    }));
+    return posts
+        .filter((post) => !post.id?.startsWith("."))
+        .map((post) => ({
+            params: { id: post.data?.slug ?? post.id },
+            props: { post },
+        }));
 }
 
 const { post } = Astro.props;

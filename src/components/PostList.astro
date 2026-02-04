@@ -2,10 +2,12 @@
 import { getCollection } from "astro:content";
 
 // oxlint-disable-next-line unicorn/no-await-expression-member
-const posts = (await getCollection("blog")).toSorted(
-    (a, b) =>
-        new Date(b.data.publicationDate).getTime() - new Date(a.data.publicationDate).getTime()
-);
+const posts = (await getCollection("blog"))
+    .filter((post) => !post.id.startsWith("."))
+    .toSorted(
+        (a, b) =>
+            new Date(b.data.publicationDate).getTime() - new Date(a.data.publicationDate).getTime()
+    );
 
 const formatDate = (date: string): string =>
     new Date(date).toLocaleDateString("en-US", {

@@ -9,14 +9,16 @@ export async function GET(context) {
         description: "All the posts!",
         site: context.site,
         trailingSlash: false,
-        items: blog.map((post) => ({
-            title: post.data.title,
-            pubDate: post.data.publicationDate,
-            description: undefined,
-            // Compute RSS link from post `id`
-            // This example assumes all posts are rendered as `/blog/[id]` routes
-            link: `/blog/${post.slug}`,
-            customData: `<guid isPermaLink="false">${post.data.id}</guid>`,
-        })),
+        items: blog
+            .filter((post) => !post.id.startsWith("."))
+            .map((post) => ({
+                title: post.data.title,
+                pubDate: post.data.publicationDate,
+                description: undefined,
+                // Compute RSS link from post `id`
+                // This example assumes all posts are rendered as `/blog/[id]` routes
+                link: `/blog/${post.slug}`,
+                customData: `<guid isPermaLink="false">${post.data.id}</guid>`,
+            })),
     });
 }
