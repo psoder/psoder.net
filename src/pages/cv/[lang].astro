@@ -1,0 +1,102 @@
+---
+import CVEducation from "../../components/cv/CVEducation.astro";
+import CVExperience from "../../components/cv/CVExperience.astro";
+import CVHeader from "../../components/cv/CVHeader.astro";
+import CVSection from "../../components/cv/CVSection.astro";
+import { cv, t, type Lang } from "../../data/cv";
+import CVLayout from "../../layouts/CVLayout.astro";
+
+export function getStaticPaths() {
+    return [{ params: { lang: "sv" } }, { params: { lang: "en" } }];
+}
+
+const { lang } = Astro.params as { lang: Lang };
+
+const labels = {
+    summary: { sv: "Sammanfattning", en: "Summary" },
+    experience: { sv: "Erfarenhet", en: "Experience" },
+    education: { sv: "Utbildning", en: "Education" },
+    skills: { sv: "Kompetenser", en: "Skills" },
+    projects: { sv: "Projekt", en: "Projects" },
+} as const;
+---
+
+<CVLayout title={`CV — ${cv.name}`} lang={lang}>
+    <div class="cv-page mx-auto max-w-3xl px-4 py-8 print:p-0 print:max-w-full flex flex-col gap-4">
+        <CVHeader name={cv.name} title={cv.title} contact={cv.contact} currentLang={lang} />
+
+        <div class="flex flex-col gap-8">
+            <CVSection title={labels.summary[lang]}>
+                <p
+                    class="border-l-2 border-ctp-surface2 pl-3 text-ctp-subtext1 leading-normal min-w-full m-0"
+                >
+                    {t(cv.summary, lang)}
+                </p>
+            </CVSection>
+
+            <CVSection title={labels.experience[lang]}>
+                <CVExperience entries={cv.experience} lang={lang} />
+            </CVSection>
+
+            <CVSection title={labels.education[lang]}>
+                <CVEducation entries={cv.education} lang={lang} />
+            </CVSection>
+
+            <CVSection title={labels.skills[lang]}>
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                    {
+                        cv.skills.map((skill) => (
+                            <div>
+                                <div class="mb-1 text-sm font-medium text-ctp-subtext0">
+                                    {t(skill.category, lang)}
+                                </div>
+
+                                <div class="flex flex-wrap gap-1">
+                                    {skill.items.map((item) => (
+                                        <span class="tag">{item}</span>
+                                    ))}
+                                </div>
+                            </div>
+                        ))
+                    }
+                </div>
+            </CVSection>
+
+            {
+                cv.projects && cv.projects.length > 0 && (
+                    <CVSection title={labels.projects[lang]}>
+                        <div class="space-y-4">
+                            {cv.projects.map((entry) => (
+                                <div class="break-inside-avoid">
+                                    <div class="flex items-baseline gap-2">
+                                        <span class="font-semibold text-ctp-text">
+                                            {entry.name}
+                                        </span>
+                                        {entry.url && (
+                                            <a
+                                                href={entry.url}
+                                                class="text-sm text-ctp-blue hover:text-ctp-rosewater print:hidden"
+                                            >
+                                                {entry.url.replace(/^https?:\/\//, "")}
+                                            </a>
+                                        )}
+                                    </div>
+                                    <p class="text-sm text-ctp-subtext1 mt-1">
+                                        {t(entry.description, lang)}
+                                    </p>
+                                    {entry.tech && entry.tech.length > 0 && (
+                                        <div class="mt-2 flex flex-wrap gap-1">
+                                            {entry.tech.map((tech) => (
+                                                <span class="tag">{tech}</span>
+                                            ))}
+                                        </div>
+                                    )}
+                                </div>
+                            ))}
+                        </div>
+                    </CVSection>
+                )
+            }
+        </div>
+    </div>
+</CVLayout>

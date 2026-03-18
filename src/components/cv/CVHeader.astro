@@ -1,0 +1,71 @@
+---
+import { t, type CVData, type Lang } from "../../data/cv";
+
+interface Props {
+    name: string;
+    title: CVData["title"];
+    contact: CVData["contact"];
+    currentLang: Lang;
+}
+
+const { name, title, contact, currentLang } = Astro.props;
+const otherLang = currentLang === "sv" ? "en" : "sv";
+const otherLangLabel = currentLang === "sv" ? "English" : "Svenska";
+---
+
+<header class="border-b border-ctp-surface2 pb-4">
+    <div class="flex items-start justify-between gap-4">
+        <div>
+            <h1 class="text-3xl font-bold text-ctp-text mb-1">{name}</h1>
+            <p class="text-lg text-ctp-subtext0 m-0 my-2">{t(title, currentLang)}</p>
+        </div>
+        <a
+            href={`/cv/${otherLang}`}
+            class="print:hidden mt-1 text-xs text-ctp-subtext0 hover:text-ctp-blue border border-ctp-surface2 hover:border-ctp-blue rounded px-2 py-1 transition-colors"
+        >
+            {otherLangLabel}
+        </a>
+    </div>
+
+    <div class="mt-2 flex flex-wrap items-center gap-y-1 text-sm text-ctp-subtext0">
+        <span>{t(contact.location, currentLang)}</span>
+        <span class="mx-2 text-ctp-surface2">·</span>
+        <a href={`mailto:${contact.email}`} class="text-ctp-blue hover:text-ctp-lavender"
+            >{contact.email}</a
+        >
+        {
+            contact.phone && (
+                <>
+                    <span class="mx-2 text-ctp-surface2">·</span>
+                    <span>{contact.phone}</span>
+                </>
+            )
+        }
+        {
+            contact.github && (
+                <>
+                    <span class="mx-2 text-ctp-surface2">·</span>
+                    <a
+                        href={`https://github.com/${contact.github}`}
+                        class="text-ctp-blue hover:text-ctp-lavender"
+                    >
+                        github.com/{contact.github}
+                    </a>
+                </>
+            )
+        }
+        {
+            contact.linkedin && (
+                <>
+                    <span class="mx-2 text-ctp-surface2">·</span>
+                    <a
+                        href={`https://linkedin.com/in/${contact.linkedin}`}
+                        class="text-ctp-blue hover:text-ctp-lavender"
+                    >
+                        linkedin.com/in/{contact.linkedin}
+                    </a>
+                </>
+            )
+        }
+    </div>
+</header>

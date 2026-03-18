@@ -180,11 +180,7 @@ html[data-theme="light"] {
 
   pre {
     padding: 1.25rem 1.5rem;
-    background: linear-gradient(
-      180deg,
-      var(--color-ctp-crust),
-      var(--color-ctp-mantle)
-    );
+    background: linear-gradient(180deg, var(--color-ctp-crust), var(--color-ctp-mantle));
     border-radius: 14px;
     overflow-x: auto;
     box-shadow:
@@ -215,11 +211,7 @@ html[data-theme="light"] {
   }
 
   :not(pre) > code {
-    background: color-mix(
-      in srgb,
-      var(--color-ctp-surface0) 85%,
-      transparent
-    );
+    background: color-mix(in srgb, var(--color-ctp-surface0) 85%, transparent);
     padding: 0.2em 0.45em;
     border-radius: 6px;
     color: var(--color-ctp-peach);

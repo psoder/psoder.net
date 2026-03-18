@@ -1,0 +1,93 @@
+---
+import "../styles/global.css";
+import Head from "../components/Head.astro";
+import ThemeToggle from "../components/ThemeToggle.astro";
+import type { Lang } from "../data/cv";
+
+interface Props {
+    title: string;
+    lang: Lang;
+}
+
+const { title, lang } = Astro.props;
+---
+
+<!doctype html>
+<html lang={lang}>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <meta name="robots" content="noindex, nofollow" />
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
+        <title>{title}</title>
+        <Head />
+        <script is:inline>
+            const t =
+                localStorage.getItem("theme") ??
+                (globalThis.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+            if (t === "light") {
+                document.documentElement.setAttribute("data-theme", "light");
+            }
+        </script>
+    </head>
+    <body>
+        <div class="print:hidden fixed top-4 right-4 z-50">
+            <ThemeToggle />
+        </div>
+
+        <main>
+            <slot />
+        </main>
+    </body>
+</html>
+
+<style is:global>
+    .tag {
+        font-size: 0.7rem;
+        background-color: var(--color-ctp-surface0);
+        color: var(--color-ctp-subtext1);
+        border: 1px solid var(--color-ctp-surface1);
+        border-radius: 4px;
+        padding: 0.1em 0.5em;
+    }
+
+    @media print {
+        @page {
+            margin: 15mm 12mm;
+            size: A4;
+        }
+
+        body {
+            font-size: 11pt;
+            print-color-adjust: exact;
+            -webkit-print-color-adjust: exact;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        * {
+            transition: none !important;
+        }
+
+        :root {
+            --ctp-base: #ffffff;
+            --ctp-crust: #f8f8f8;
+            --ctp-mantle: #f4f4f4;
+            --ctp-text: #000000;
+            --ctp-subtext0: #333333;
+            --ctp-subtext1: #444444;
+            --ctp-surface0: #f0f0f0;
+            --ctp-surface1: #e0e0e0;
+            --ctp-surface2: #cccccc;
+            --ctp-mauve: #7c3aed;
+        }
+    }
+</style>

@@ -1,0 +1,46 @@
+---
+import { formatDate, getPresentLabel, t, type CVData, type Lang } from "../../data/cv";
+
+interface Props {
+    entries: CVData["experience"];
+    lang: Lang;
+}
+
+const { entries, lang } = Astro.props;
+
+const presentLabel = getPresentLabel(lang);
+---
+
+<div class="space-y-5">
+    {
+        entries.map((entry) => (
+            <div class="break-inside-avoid">
+                <div class="flex items-baseline justify-between gap-2 flex-wrap">
+                    <div>
+                        <span class="font-semibold text-ctp-text">{t(entry.role, lang)}</span>
+                        <span class="text-ctp-subtext0">
+                            {" "}
+                            · {entry.company} · {t(entry.location, lang)}
+                        </span>
+                    </div>
+                    <span class="text-sm text-ctp-subtext0 whitespace-nowrap">
+                        {formatDate(entry.startDate, lang)} –{" "}
+                        {entry.endDate ? formatDate(entry.endDate, lang) : presentLabel}
+                    </span>
+                </div>
+                <ul class="mt-1 list-disc list-outside pl-4 space-y-1 text-ctp-subtext1">
+                    {t(entry.description, lang).map((line) => (
+                        <li>{line}</li>
+                    ))}
+                </ul>
+                {entry.tech && entry.tech.length > 0 && (
+                    <div class="mt-2 flex flex-wrap gap-1">
+                        {entry.tech.map((tech) => (
+                            <span class="tag">{tech}</span>
+                        ))}
+                    </div>
+                )}
+            </div>
+        ))
+    }
+</div>

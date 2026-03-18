@@ -1,0 +1,39 @@
+---
+import { formatDate, getPresentLabel, t, type CVData, type Lang } from "../../data/cv";
+
+interface Props {
+    entries: CVData["education"];
+    lang: Lang;
+}
+
+const { entries, lang } = Astro.props;
+
+const presentLabel = getPresentLabel(lang);
+---
+
+<div class="space-y-4">
+    {
+        entries.map((entry) => (
+            <div class="break-inside-avoid">
+                <div class="flex items-baseline justify-between gap-2 flex-wrap">
+                    <div>
+                        <span class="font-semibold text-ctp-text">{t(entry.degree, lang)}</span>
+                        <span class="text-ctp-subtext0"> · {t(entry.field, lang)}</span>
+                    </div>
+                    <span class="text-sm text-ctp-subtext0 whitespace-nowrap">
+                        {formatDate(entry.startDate, lang)} –{" "}
+                        {entry.endDate ? formatDate(entry.endDate, lang) : presentLabel}
+                    </span>
+                </div>
+
+                <p class="text-sm text-ctp-subtext0 mt-1 mb-0">
+                    {t(entry.institution, lang)} · {t(entry.location, lang)}
+                </p>
+
+                {entry.notes && (
+                    <p class="mt-1 text-sm text-ctp-subtext1 mb-0">{t(entry.notes, lang)}</p>
+                )}
+            </div>
+        ))
+    }
+</div>
