@@ -1,0 +1,56 @@
+---
+
+---
+
+<button id="theme-toggle" aria-label="Toggle theme" class="cursor-pointer text-ctp-subtext1 transition-colors duration-150 hover:text-ctp-text">
+    <!-- Sun: shown in dark mode -->
+    <svg id="theme-icon-sun" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="4"/>
+        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+    </svg>
+    <!-- Moon: shown in light mode -->
+    <svg id="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+    </svg>
+</button>
+
+<style>
+    #theme-icon-moon {
+        display: none;
+    }
+
+    :global(html[data-theme="light"]) #theme-icon-sun {
+        display: none;
+    }
+
+    :global(html[data-theme="light"]) #theme-icon-moon {
+        display: block;
+    }
+</style>
+
+<script>
+    const html = document.documentElement;
+
+    function getTheme(): string {
+        return (
+            localStorage.getItem("theme") ??
+            (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark")
+        );
+    }
+
+    function applyTheme(theme: string) {
+        if (theme === "light") {
+            html.setAttribute("data-theme", "light");
+        } else {
+            html.removeAttribute("data-theme");
+        }
+        localStorage.setItem("theme", theme);
+    }
+
+    applyTheme(getTheme());
+
+    document.getElementById("theme-toggle")!.addEventListener("click", () => {
+        const current = html.getAttribute("data-theme") === "light" ? "light" : "dark";
+        applyTheme(current === "dark" ? "light" : "dark");
+    });
+</script>

@@ -3,33 +3,97 @@
 
 @tailwind utilities;
 
-@theme {
-  --color-ctp-rosewater: #f4dbd6;
-  --color-ctp-flamingo: #f0c6c6;
-  --color-ctp-pink: #f5bde6;
-  --color-ctp-mauve: #c6a0f6;
-  --color-ctp-red: #ed8796;
-  --color-ctp-maroon: #ee99a0;
-  --color-ctp-peach: #f5a97f;
-  --color-ctp-yellow: #eed49f;
-  --color-ctp-green: #a6da95;
-  --color-ctp-teal: #8bd5ca;
-  --color-ctp-sky: #91d7e3;
-  --color-ctp-sapphire: #7dc4e4;
-  --color-ctp-blue: #8aadf4;
-  --color-ctp-lavender: #b7bdf8;
+@theme inline {
+  --color-ctp-rosewater: var(--ctp-rosewater);
+  --color-ctp-flamingo: var(--ctp-flamingo);
+  --color-ctp-pink: var(--ctp-pink);
+  --color-ctp-mauve: var(--ctp-mauve);
+  --color-ctp-red: var(--ctp-red);
+  --color-ctp-maroon: var(--ctp-maroon);
+  --color-ctp-peach: var(--ctp-peach);
+  --color-ctp-yellow: var(--ctp-yellow);
+  --color-ctp-green: var(--ctp-green);
+  --color-ctp-teal: var(--ctp-teal);
+  --color-ctp-sky: var(--ctp-sky);
+  --color-ctp-sapphire: var(--ctp-sapphire);
+  --color-ctp-blue: var(--ctp-blue);
+  --color-ctp-lavender: var(--ctp-lavender);
 
-  --color-ctp-text: #cad3f5;
-  --color-ctp-subtext1: #b8c0e0;
-  --color-ctp-subtext0: #a5adcb;
+  --color-ctp-text: var(--ctp-text);
+  --color-ctp-subtext1: var(--ctp-subtext1);
+  --color-ctp-subtext0: var(--ctp-subtext0);
 
-  --color-ctp-surface2: #5b6078;
-  --color-ctp-surface1: #494d64;
-  --color-ctp-surface0: #363a4f;
+  --color-ctp-surface2: var(--ctp-surface2);
+  --color-ctp-surface1: var(--ctp-surface1);
+  --color-ctp-surface0: var(--ctp-surface0);
 
-  --color-ctp-base: #24273a;
-  --color-ctp-mantle: #1e2030;
-  --color-ctp-crust: #181926;
+  --color-ctp-base: var(--ctp-base);
+  --color-ctp-mantle: var(--ctp-mantle);
+  --color-ctp-crust: var(--ctp-crust);
+}
+
+/* Dark theme — Catppuccin Macchiato */
+:root {
+  color-scheme: dark;
+
+  --ctp-rosewater: #f4dbd6;
+  --ctp-flamingo: #f0c6c6;
+  --ctp-pink: #f5bde6;
+  --ctp-mauve: #c6a0f6;
+  --ctp-red: #ed8796;
+  --ctp-maroon: #ee99a0;
+  --ctp-peach: #f5a97f;
+  --ctp-yellow: #eed49f;
+  --ctp-green: #a6da95;
+  --ctp-teal: #8bd5ca;
+  --ctp-sky: #91d7e3;
+  --ctp-sapphire: #7dc4e4;
+  --ctp-blue: #8aadf4;
+  --ctp-lavender: #b7bdf8;
+
+  --ctp-text: #cad3f5;
+  --ctp-subtext1: #b8c0e0;
+  --ctp-subtext0: #a5adcb;
+
+  --ctp-surface2: #5b6078;
+  --ctp-surface1: #494d64;
+  --ctp-surface0: #363a4f;
+
+  --ctp-base: #24273a;
+  --ctp-mantle: #1e2030;
+  --ctp-crust: #181926;
+}
+
+/* Light theme — Catppuccin Latte */
+html[data-theme="light"] {
+  color-scheme: light;
+
+  --ctp-rosewater: #dc8a78;
+  --ctp-flamingo: #dd7878;
+  --ctp-pink: #ea76cb;
+  --ctp-mauve: #8839ef;
+  --ctp-red: #d20f39;
+  --ctp-maroon: #e64553;
+  --ctp-peach: #fe640b;
+  --ctp-yellow: #df8e1d;
+  --ctp-green: #40a02b;
+  --ctp-teal: #179299;
+  --ctp-sky: #04a5e5;
+  --ctp-sapphire: #209fb5;
+  --ctp-blue: #1e66f5;
+  --ctp-lavender: #7287fd;
+
+  --ctp-text: #4c4f69;
+  --ctp-subtext1: #5c5f77;
+  --ctp-subtext0: #6c6f85;
+
+  --ctp-surface2: #acb0be;
+  --ctp-surface1: #bcc0cc;
+  --ctp-surface0: #ccd0da;
+
+  --ctp-base: #eff1f5;
+  --ctp-mantle: #e6e9ef;
+  --ctp-crust: #dce0e8;
 }
 
 @layer base {
@@ -42,6 +106,9 @@
   html {
     scroll-behavior: smooth;
     hanging-punctuation: first last;
+    transition:
+      background-color 200ms ease,
+      color 200ms ease;
   }
 
   body {
@@ -122,7 +189,7 @@
     overflow-x: auto;
     box-shadow:
       inset 0 0 0 1px color-mix(in srgb, var(--color-ctp-surface0) 70%, transparent),
-      0 10px 30px -15px rgba(0, 0, 0, 0.6);
+      0 10px 30px -15px color-mix(in srgb, var(--ctp-crust) 60%, transparent);
 
     scrollbar-width: thin;
     scrollbar-color: var(--color-ctp-surface2) transparent;
