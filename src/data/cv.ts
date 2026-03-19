@@ -61,15 +61,15 @@ export interface CVData {
 
 export const cv: CVData = {
     name: "Pontus Söderlund",
-    title: { sv: "Mjukvaruutvecklare", en: "Software Developer" },
+    title: { sv: "Mjukvaruutvecklare / Arkitekt", en: "Software Developer / Architect" },
     contact: {
         email: "pontus@psoder.net",
         location: { sv: "Sverige", en: "Sweden" },
         github: "psoder",
     },
     summary: {
-        sv: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil reprehenderit quos exercitationem labore repudiandae? Assumenda, ut. Corrupti, labore error. Dolores dolor accusamus modi. Perspiciatis, nam? Soluta assumenda vero odit animi.",
-        en: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil reprehenderit quos exercitationem labore repudiandae? Assumenda, ut. Corrupti, labore error. Dolores dolor accusamus modi. Perspiciatis, nam? Soluta assumenda vero odit animi.",
+        sv: "Backendfokuserad utvecklare och arkitekt med ett djupt intresse för hur system designas och byggs. Erfarenhet av att leda teknisk riktning på ett startup i tidig fas, med upphandlings- och avtalshanteringssystem för offentlig och privat sektor. Drivs av robust datamodellering, god arkitektur och långsiktig underhållbarhet.",
+        en: "Backend-focused developer and architect with a deep interest in how systems are designed and built. Experienced in leading technical direction at an early-stage startup, building procurement and contract management software for the public and private sector. Driven by robust data modeling, sound architecture, and long-term maintainability.",
     },
     experience: [
         {
@@ -80,15 +80,21 @@ export const cv: CVData = {
             location: { sv: "Stockholm, Sverige", en: "Stockholm, Sweden" },
             description: {
                 sv: [
-                    "Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
-                    "Dolores dolor accusamus modi. Perspiciatis, nam? Soluta assumenda vero odit animi.",
+                    "Arkitekterade och byggde ett system för ifyllnad och validering av TED eForms-annonser i enlighet med EU:s upphandlingsstandarder.",
+                    "Designade dataåtkomstlager för upphandlingar och avtal med versionering, PDF-export och arkiveringsstöd.",
+                    "Byggde en integrationsplattform för att koppla externa system till upphandlings- och avtalsplattformen.",
+                    "Gick från utvecklare till stabilitetsansvarig till ledande arkitekt, med ansvar för systemarkitektur och teknisk riktning.",
+                    "Drev migrering till monorepo och trunkbaserat utvecklingsflöde, införde kodkvalitetsverktyg och ledde uppgradering av beroenden.",
                 ],
                 en: [
-                    "Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
-                    "Dolores dolor accusamus modi. Perspiciatis, nam? Soluta assumenda vero odit animi.",
+                    "Architected and built a system for filling in and validating TED eForms notices in compliance with EU procurement standards.",
+                    "Designed procurement and contract data access layers with versioning, PDF export, and archival support.",
+                    "Built an integration platform for connecting external systems to the procurement and contract platform.",
+                    "Progressed from developer to head of stability to lead architect, taking ownership of system architecture and technical direction.",
+                    "Led migration to a monorepo and trunk-based development, introduced code quality tooling, and drove dependency upgrades.",
                 ],
             },
-            tech: ["TypeScript", "Next.js", "React", "PHP", "Laravel", "Kotlin"],
+            tech: ["TypeScript", "Next.js", "React", "PHP", "Laravel", "Kotlin", "WebAssembly"],
         },
     ],
     education: [
@@ -104,15 +110,19 @@ export const cv: CVData = {
     skills: [
         {
             category: { sv: "Programmeringsspråk", en: "Languages" },
-            items: ["TypeScript", "Kotlin", "PHP", "Java", "Rust"],
+            items: ["TypeScript", "Kotlin", "PHP", "Java", "Rust", "WebAssembly"],
         },
         {
             category: { sv: "Webb", en: "Web" },
-            items: ["React", "Astro", "Next.js", "Tailwind", "NX"],
+            items: ["React", "Astro", "Next.js", "Tailwind"],
+        },
+        {
+            category: { sv: "Backend & Data", en: "Backend & Data" },
+            items: ["PostgreSQL", "Redis", "REST", "gRPC"],
         },
         {
             category: { sv: "Verktyg", en: "Tools" },
-            items: ["Git", "Docker", "Linux", "PostgreSQL"],
+            items: ["Git", "Docker", "GitHub Actions", "Linux", "NX"],
         },
     ],
 };
