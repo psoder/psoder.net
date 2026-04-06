@@ -12,7 +12,7 @@ export const t = <T>(val: MultiLingualValue<T>, lang: Lang): T => val[lang];
 export function formatDate(dateStr: string, lang: Lang): string {
     const [year, month] = dateStr.split("-").map(Number);
     return new Intl.DateTimeFormat(lang, { year: "numeric", month: "long" }).format(
-        new Date(year, month - 1)
+        new Date(year, month - 1),
     );
 }
 
@@ -122,7 +122,7 @@ export const cv: CVData = {
         },
         {
             category: { sv: "Verktyg", en: "Tools" },
-            items: ["Git", "Docker", "GitHub Actions", "Linux", "NX"],
+            items: ["Git", "Docker", "GitHub Actions", "Linux", "NX", "Terraform"],
         },
     ],
 };

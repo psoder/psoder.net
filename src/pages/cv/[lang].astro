@@ -1,10 +1,10 @@
 ---
-import CVEducation from "../../components/cv/CVEducation.astro";
-import CVExperience from "../../components/cv/CVExperience.astro";
-import CVHeader from "../../components/cv/CVHeader.astro";
-import CVSection from "../../components/cv/CVSection.astro";
-import { cv, t, type Lang } from "../../data/cv";
-import CVLayout from "../../layouts/CVLayout.astro";
+import { cv, t, type Lang } from "../../cv/data";
+import Education from "../../cv/Education.astro";
+import Experience from "../../cv/Experience.astro";
+import Header from "../../cv/Header.astro";
+import Layout from "../../cv/Layout.astro";
+import Section from "../../cv/Section.astro";
 
 export function getStaticPaths() {
     return [{ params: { lang: "sv" } }, { params: { lang: "en" } }];
@@ -21,28 +21,28 @@ const labels = {
 } as const;
 ---
 
-<CVLayout title={`CV — ${cv.name}`} lang={lang}>
+<Layout title={`CV — ${cv.name}`} lang={lang}>
     <div class="cv-page mx-auto max-w-3xl px-4 py-8 print:p-0 print:max-w-full flex flex-col gap-4">
-        <CVHeader name={cv.name} title={cv.title} contact={cv.contact} currentLang={lang} />
+        <Header name={cv.name} title={cv.title} contact={cv.contact} currentLang={lang} />
 
         <div class="flex flex-col gap-8">
-            <CVSection title={labels.summary[lang]}>
+            <Section title={labels.summary[lang]}>
                 <p
                     class="border-l-2 border-ctp-surface2 pl-3 text-ctp-subtext1 leading-normal min-w-full m-0"
                 >
                     {t(cv.summary, lang)}
                 </p>
-            </CVSection>
+            </Section>
 
-            <CVSection title={labels.experience[lang]}>
-                <CVExperience entries={cv.experience} lang={lang} />
-            </CVSection>
+            <Section title={labels.experience[lang]}>
+                <Experience entries={cv.experience} lang={lang} />
+            </Section>
 
-            <CVSection title={labels.education[lang]}>
-                <CVEducation entries={cv.education} lang={lang} />
-            </CVSection>
+            <Section title={labels.education[lang]}>
+                <Education entries={cv.education} lang={lang} />
+            </Section>
 
-            <CVSection title={labels.skills[lang]}>
+            <Section title={labels.skills[lang]}>
                 <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
                     {
                         cv.skills.map((skill) => (
@@ -60,11 +60,11 @@ const labels = {
                         ))
                     }
                 </div>
-            </CVSection>
+            </Section>
 
             {
                 cv.projects && cv.projects.length > 0 && (
-                    <CVSection title={labels.projects[lang]}>
+                    <Section title={labels.projects[lang]}>
                         <div class="space-y-4">
                             {cv.projects.map((entry) => (
                                 <div class="break-inside-avoid">
@@ -94,9 +94,9 @@ const labels = {
                                 </div>
                             ))}
                         </div>
-                    </CVSection>
+                    </Section>
                 )
             }
         </div>
     </div>
-</CVLayout>
+</Layout>
