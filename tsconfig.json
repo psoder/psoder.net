@@ -3,7 +3,7 @@
   "include": [".astro/types.d.ts", "**/*"],
   "exclude": ["dist", "node_modules"],
   "compilerOptions": {
-    "target": "es5",
+    "target": "esnext",
     "lib": ["dom", "dom.iterable", "esnext"],
     "strictNullChecks": true,
     "allowJs": true,

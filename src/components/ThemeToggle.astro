@@ -31,26 +31,26 @@
 <script>
     const html = document.documentElement;
 
-    function getTheme(): string {
+    const getTheme = (): string => {
         return (
             localStorage.getItem("theme") ??
-            (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark")
+            (globalThis.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark")
         );
     }
 
-    function applyTheme(theme: string) {
+    const applyTheme = (theme: string) => {
         if (theme === "light") {
-            html.setAttribute("data-theme", "light");
+            html.dataset.theme = "light";
         } else {
-            html.removeAttribute("data-theme");
+            delete html.dataset.theme;
         }
         localStorage.setItem("theme", theme);
     }
 
     applyTheme(getTheme());
 
-    document.getElementById("theme-toggle")!.addEventListener("click", () => {
-        const current = html.getAttribute("data-theme") === "light" ? "light" : "dark";
+    document.querySelector("theme-toggle").addEventListener("click", () => {
+        const current = html.dataset.theme === "light" ? "light" : "dark";
         applyTheme(current === "dark" ? "light" : "dark");
     });
 </script>

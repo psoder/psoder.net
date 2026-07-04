@@ -31,7 +31,7 @@ const { title, lang } = Astro.props;
                 localStorage.getItem("theme") ??
                 (globalThis.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
             if (t === "light") {
-                document.documentElement.setAttribute("data-theme", "light");
+                document.documentElement.dataset.theme = "light";
             }
         </script>
     </head>

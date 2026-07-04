@@ -1,25 +1,15 @@
 {
   "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": [
-    "unicorn",
-    "typescript",
-    "oxc",
-    "nextjs",
-    "react",
-    "react-perf",
-    "promise"
-  ],
+  "plugins": ["unicorn", "typescript", "oxc", "nextjs", "react", "react-perf", "promise"],
   "categories": {
     "correctness": "error",
     "pedantic": "error",
     "restriction": "error",
     "perf": "error",
     "suspicious": "error",
-    "style": "warn",
+    "style": "warn"
   },
-  "jsPlugins": [
-    "@tanstack/eslint-plugin-query"
-  ],
+  "jsPlugins": ["@tanstack/eslint-plugin-query"],
   "settings": {
     "jsx-a11y": {
       "polymorphicPropName": null,
@@ -73,9 +63,7 @@
     "eslint/no-console": [
       "error",
       {
-        "allow": [
-          "error"
-        ]
+        "allow": ["error"]
       }
     ],
     "oxc/no-async-await": "off",

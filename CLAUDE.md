@@ -21,6 +21,7 @@ bun fmt:check    # Check formatting without modifying
 Astro 5 personal website for psoder.net. Uses Tailwind CSS v4 (via Vite plugin, not PostCSS), Google Fonts (Inter + IBM Plex Serif), and `astro-icon` for icons.
 
 **Routing:**
+
 - `/` — home page (`src/pages/index.astro`)
 - `/blog` — post listing (`src/pages/blog.astro`)
 - `/blog/[id]` — individual posts from `src/content/blog/` collection

@@ -74,13 +74,13 @@ export const cv: CVData = {
     experience: [
         {
             company: "Clira AB",
-            role: { sv: "Mjukvaruutvecklare", en: "Software Developer" },
+            role: { sv: "Mjukvaruutvecklare", en: "Software Engineer" },
             startDate: "2023-06",
-            endDate: undefined,
+            endDate: "2026-06",
             location: { sv: "Stockholm, Sverige", en: "Stockholm, Sweden" },
             description: {
                 sv: [
-                    "Arkitekterade och byggde ett system för ifyllnad och validering av TED eForms-annonser i enlighet med EU:s upphandlingsstandarder.",
+                    "Designade och byggde ett system för ifyllnad och validering av TED eForms-annonser i enlighet med EU:s upphandlingsstandarder.",
                     "Designade dataåtkomstlager för upphandlingar och avtal med versionering, PDF-export och arkiveringsstöd.",
                     "Byggde en integrationsplattform för att koppla externa system till upphandlings- och avtalsplattformen.",
                     "Gick från utvecklare till stabilitetsansvarig till ledande arkitekt, med ansvar för systemarkitektur och teknisk riktning.",

@@ -12,30 +12,28 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
 
-  experimental: {
-    fonts: [
-      {
-        provider: fontProviders.google(),
-        name: "Inter",
-        cssVariable: "--font-inter",
-      },
-      {
-        provider: fontProviders.google(),
-        name: "IBM Plex Serif",
-        cssVariable: "--font-ibm-plex-serif",
-      },
-      {
-        provider: fontProviders.googleicons(),
-        name: "Google Icons",
-        cssVariable: "--font-google-icons",
-        options: {
-          experimental: {
-            glyphs: ["a"],
-          },
+  fonts: [
+    {
+      provider: fontProviders.google(),
+      name: "Inter",
+      cssVariable: "--font-inter",
+    },
+    {
+      provider: fontProviders.google(),
+      name: "IBM Plex Serif",
+      cssVariable: "--font-ibm-plex-serif",
+    },
+    {
+      provider: fontProviders.googleicons(),
+      name: "Google Icons",
+      cssVariable: "--font-google-icons",
+      options: {
+        experimental: {
+          glyphs: ["a"],
         },
       },
-    ],
-  },
+    },
+  ],
 
   integrations: [icon()],
 });

@@ -147,13 +147,7 @@
 }
 
 .markdown.prose pre code {
-  font-family:
-    ui-monospace,
-    SFMono-Regular,
-    Menlo,
-    Monaco,
-    Consolas,
-    monospace;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   color: var(--ctp-text);
   font-size: 0.95rem;
   line-height: 1.65;
