@@ -15,18 +15,18 @@
   },
   "dependencies": {
     "@astrojs/rss": "4.0.19",
-    "astro": "7.0.6",
-    "astro-icon": "1.1.5"
+    "astro": "7.3.2",
+    "astro-icon": "1.2.0"
   },
   "devDependencies": {
-    "@astrojs/check": "0.9.9",
+    "@astrojs/check": "0.9.10",
     "@iconify-json/mdi": "1.2.3",
-    "@tailwindcss/vite": "4.3.2",
-    "@tanstack/eslint-plugin-query": "5.101.2",
-    "oxfmt": "0.57.0",
-    "oxlint": "1.72.0",
-    "prettier": "3.9.4",
-    "tailwindcss": "4.3.2",
-    "typescript": "6.0.3"
+    "@tailwindcss/vite": "4.3.3",
+    "@tanstack/eslint-plugin-query": "5.102.8",
+    "oxfmt": "0.67.0",
+    "oxlint": "1.82.0",
+    "prettier": "3.9.6",
+    "tailwindcss": "4.3.3",
+    "typescript": "7.0.2"
   }
 }
